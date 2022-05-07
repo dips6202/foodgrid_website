@@ -32,6 +32,12 @@ body{
     background: #f7f7f7;
 }
 
+section{
+    padding: 2rem 9%;
+}
+
+
+
 
 header{
     position: fixed;
@@ -78,13 +84,97 @@ header .navbar a:hover{
 }
 
 
-
-
-
-
-@media(max-with:991){
-    html{
-        font-size: 55%;
-        
-    }    
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+    background: url("/images/767352.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
 }
+
+.home .content{
+    flex: 1 1 40 rem;
+    padding-top: 6.5rem;
+}
+
+
+.home .image{
+    flex: 1 1 40 rem;
+
+}
+
+
+.home .image img{
+    width:100%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+
+}
+
+@keyframes float{
+    0%, 100%{
+        transform: translate(0rem)
+    }
+
+    50%{
+        transform: translate(3rem)
+    }
+}
+
+
+
+
+
+
+@media(max-width:991px){
+
+    html{
+        font-size: 55%;        
+    } 
+    header{
+        padding: 2rem;
+    }
+}
+
+
+@media(max-width:768px){
+
+    #menu-bar{
+        display: initial;
+        
+    }
+    header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right:0;
+        background: #f7f7f7;
+        border-top: .1rem solid rgba(0,0,0,.1);
+       clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+
+
+
+    header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        display: block;
+        border: .2rem solid rgba(0,0,0,.1);
+        border-left:.5rem solid var(--red);
+       background: #fff;
+    }
+}
+
+
+@media(max-width:400px){
+        html{
+        font-size: 50%;
+  }     
+}
+
